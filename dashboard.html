@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Dashboard</title>
+
+    <style>
+        body { background:#05070f; color:#00fff2; font-family:Arial; margin:0; }
+
+        .header {
+            background:#0b1220;
+            padding:20px;
+            text-align:center;
+            font-size:22px;
+            border-bottom:1px solid #00fff2;
+        }
+
+        .container { display:flex; }
+
+        .sidebar {
+            width:200px;
+            height:100vh;
+            background:#0b1220;
+            padding:20px;
+        }
+
+        .btn {
+            display:block;
+            margin:10px 0;
+            padding:10px;
+            border:1px solid #00fff2;
+            color:#00fff2;
+            text-decoration:none;
+            text-align:center;
+        }
+
+        .main { padding:20px; flex:1; }
+
+        .card {
+            background:#0b1220;
+            padding:15px;
+            margin:10px 0;
+            border:1px solid #00fff2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">CYBER THREAT INTELLIGENCE SYSTEM</div>
+
+<div class="container">
+
+    <div class="sidebar">
+        <a class="btn" href="/">Dashboard</a>
+        <a class="btn" href="/new-case">New Case</a>
+        <a class="btn" href="/search">Search</a>
+    </div>
+
+    <div class="main">
+
+        <h2>Dashboard</h2>
+
+        <div class="card">
+            Total Cases: {{ cases|length }}
+        </div>
+
+        {% for c in cases %}
+        <div class="card">
+            ID: {{ c.id }} <br>
+            Analyst: {{ c.analyst }} <br>
+            Risk: {{ c.risk }}
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

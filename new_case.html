@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Case</title>
+    <style>
+        body { background:#05070f; color:#00fff2; font-family:Arial; text-align:center; }
+
+        input, select {
+            padding:10px;
+            margin:10px;
+            background:black;
+            color:#00fff2;
+            border:1px solid #00fff2;
+        }
+
+        button {
+            padding:10px 20px;
+            background:black;
+            color:#00fff2;
+            border:1px solid #00fff2;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>NEW CASE</h1>
+
+<form method="POST">
+    <input name="case_id" placeholder="Case ID"><br>
+    <input name="analyst" placeholder="Analyst Name"><br>
+
+    <select name="risk">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select><br>
+
+    <button type="submit">Save Case</button>
+</form>
+
+<br>
+<a href="/">Back to Dashboard</a>
+
+</body>
+</html>

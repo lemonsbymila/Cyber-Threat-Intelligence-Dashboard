@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Case</title>
+    <style>
+        body { background:#05070f; color:#00fff2; font-family:Arial; text-align:center; }
+
+        input, button {
+            padding:10px;
+            margin:10px;
+            background:black;
+            color:#00fff2;
+            border:1px solid #00fff2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SEARCH CASE</h1>
+
+<form method="POST">
+    <input name="search_id" placeholder="Enter Case ID">
+    <button type="submit">Search</button>
+</form>
+
+{% if result %}
+    <h3>RESULT FOUND</h3>
+    <p>ID: {{ result.id }}</p>
+    <p>Analyst: {{ result.analyst }}</p>
+    <p>Risk: {{ result.risk }}</p>
+{% elif result is not none %}
+    <p>No case found</p>
+{% endif %}
+
+<br>
+<a href="/">Back to Dashboard</a>
+
+</body>
+</html>
